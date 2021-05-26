@@ -1,47 +1,67 @@
-@if ($errors->any())
-    <div>
-        <div>{{ __('Whoops! Something went wrong.') }}</div>
+<x-auth-layout title="Verification">
+	<x-slot name="cover_image">
+		{{ _('https://images.pexels.com/photos/6963067/pexels-photo-6963067.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') }}
+	</x-slot>
+	<x-slot name="cover_image_alt">
+		{{ _('Man and Woman Sitting at Table') }}
+	</x-slot>
+	<div class="uk-text-center">
+		<x-laravel-logo />
+		<h2 class="uk-text-muted">{{ __('Two-Factor Code') }}</h2>
+	</div>
 
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+	<form method="POST" action="{{ url('/two-factor-challenge') }}">
+		@csrf
+		<div class="uk-margin">
+			<label class="uk-form-label">{{ __('Password') }}</label>
+			<div class="uk-width-1-1">
+				<div class="uk-inline uk-width-1-1">
+					<span class="uk-form-icon" uk-icon="icon: phone"></span>
+					<input class="uk-input @error('code') 'uk-form-danger' @enderror" type="text" name="code" autofocus autocomplete="one-time-code" />
+				</div>
 
-<form method="POST" action="{{ url('/two-factor-challenge') }}">
-    @csrf
+				@error('code')
+					<x-alert type="danger" :message="$message"></x-alert>
+				@enderror
+			</div>
+		</div>
 
-    {{--
-        Do not show both of these fields, together. It's recommended
-        that you only show one field at a time and use some logic
-        to toggle the visibility of each field
-    --}}
+		{{-- ** OR ** --}}
 
-    <div>
-        {{ __('Please confirm access to your account by entering the authentication code provided by your authenticator application.') }}
-    </div>
+		<div class="confirmation-method" hidden>
+			<div>
+				{{ __('Please confirm access to your account by entering one of your emergency recovery codes.') }}
+			</div>
 
-    <div>
-        <label>{{ __('Code') }}</label>
-        <input type="text" name="code" autofocus autocomplete="one-time-code" />
-    </div>
+			<div class="uk-margin">
+				<label class="uk-form-label">{{ __('Recovery Code') }}</label>
 
-    {{-- ** OR ** --}}
+				<div class="uk-inline uk-width-1-1">
+					<span class="uk-form-icon" uk-icon="icon: list"></span>
+					<input class="uk-input @error('recovery_code') 'uk-form-danger' @enderror" type="text" name="recovery_code" autocomplete="one-time-code" />
+				</div>
 
-    <div>
-        {{ __('Please confirm access to your account by entering one of your emergency recovery codes.') }}
-    </div>
+				@error('recovery_code')
+					<x-alert type="danger" :message="$message"></x-alert>
+				@enderror
+			</div>
+		</div>
 
-    <div>
-        <label>{{ __('Recovery Code') }}</label>
-        <input type="text" name="recovery_code" autocomplete="one-time-code" />
-    </div>
+		<div class="uk-margin uk-text-center ">
+			<x-auth-button>
+				{{ __('Login') }}
+			</x-auth-button>
+		</div>
 
-    <div>
-        <button type="submit">
-            {{ __('Login') }}
-        </button>
-    </div>
-</form>
+		<div class="uk-text-center">
+			<a class="confirmation-method" uk-toggle="target: .confirmation-method">
+				<small class="uk-text-small">{{ __('Use a recovery code') }}</small>
+			</a>
+
+			<a class="confirmation-method" uk-toggle="target: .confirmation-method" hidden>
+				<small class="uk-text-small">{{ __('Use an authentication code') }}</small>
+			</a>
+		</div>
+	</form>
+
+</x-auth-layout>

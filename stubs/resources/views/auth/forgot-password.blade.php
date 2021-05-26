@@ -1,40 +1,49 @@
-@extends('layouts.app')
+<x-auth-layout title="Forgot Password">
+	<x-slot name="cover_image">
+		{{ _('https://images.pexels.com/photos/7534774/pexels-photo-7534774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') }}
+	</x-slot>
+	<x-slot name="cover_image_alt">
+		{{ _('Man in Black Leather Jacket Covering His Face') }}
+	</x-slot>
+	<div class="uk-text-center">
+		<x-laravel-logo />
 
-@section('content')
-    <div>
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
+		<h2 class="uk-text-muted">{{ __('Forgot Password?') }}</h2>
+		<p>
+			{{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+		</p>
+	</div>
 
-    @if (session('status'))
-        <div>
-            {{ session('status') }}
-        </div>
-    @endif
+	<form method="POST" action="{{ route('password.email') }}">
+		@csrf
+		<div class="uk-margin">
+			<label class="uk-form-label">{{ __('Email') }}</label>
 
-    @if ($errors->any())
-        <div>
-            <div>{{ __('Whoops! Something went wrong.') }}</div>
+			<div class="uk-width-1-1">
+				<div class="uk-inline uk-width-1-1">
+					<span class="uk-form-icon" uk-icon="icon: mail"></span>
+					<input class="uk-input @error('email') uk-form-danger @enderror" type="email" name="email" value="{{ old('email') }}" required autofocus />
+				</div>
 
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+				@error('email')
+					<x-alert type="danger" :message="$message"></x-alert>
+				@enderror
+			</div>
 
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
+		</div>
 
-        <div>
-            <label>{{ __('Email') }}</label>
-            <input type="email" name="email" value="{{ old('email') }}" required autofocus />
-        </div>
+		<div class="uk-margin uk-text-center">
+			<x-auth-button>
+				{{ __('Send Link') }}
+			</x-auth-button>
+		</div>
+	</form>
 
-        <div>
-            <button type="submit">
-                {{ __('Email Password Reset Link') }}
-            </button>
-        </div>
-    </form>
-@endsection
+	<div class="uk-margin-medium-top uk-margin-remove-bottom uk-text-center uk-flex uk-flex-center">
+		<div class="uk-text-meta">
+			<a href="{{ route('login') }}" class="uk-text-primary uk-link-text">
+				<small class="uk-text-small">{{ __('Back to login') }}</small>
+			</a>
+		</div>
+	</div>
+</x-auth-layout>
