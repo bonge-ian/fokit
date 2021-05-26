@@ -1,60 +1,57 @@
-<p align="center"><img width="400" src="https://github.com/zacksmash/fortify-ui-preset/raw/master/fortify-preset-image.png"></p>
-
-# Using this template
-
-Here are the steps to customize this template with your preset
-
-- Rename the files in the `src` directory. Example `FortifyUIBootstrapCommand.php`
-    - Make sure you update any `use` statements and namespaces
-- Add your preset stubs to the `stubs` directory
-- Add your preset image and preset screenshots
-- Update the `composer.json`
-    - Replace all instances of `YourNamespace\\FortifyUIPreset` with your details. For example: `SomeDude\\FortifyUIBootstrap`
-- Search & Replace all of the following terms
-    - YourNamespace
-    - yournamespace
-    - YourPreset
-    - yourpreset
-    - SomeFramework
-    - Your Name
-    - yourusername
-    - you@yourdomain.com
-
+<p align="center"><img width="400" src="https://github.com/zacksmash/fortify-uikit/raw/master/fortify-uikit-image.png"></p>
 
 # Introduction
 
-**YourPreset** is a Laravel Fortify UI preset, built with SomeFramework.
+**Fokit** is a Laravel Fortify UI preset, built with UIkit with a slight opinionative modern touch.
 
 - [Requirements](#requirements)
 - [Installation](#installation)
 
 <a name="requirements"></a>
+
 ## Requirements
 
-This package requires Laravel Fortify and FortifyUI. Installing [*FortifyUI*](https://github.com/zacksmash/fortify-ui) will automatically install and configure Laravel Fortify for you, so you may start there.
+This package requires [*FortifyUI*](https://github.com/zacksmash/fortify-ui). Please, install that first before installing **Fokit**.
 
 <a name="installation"></a>
 ## Installation
 
-To get started, you'll need to install **YourPreset** using Composer.
+To get started, you'll need to install **Fokit** using Composer.
 
 ```bash
-composer require yournamespace/fortify-yourpreset
+composer require bonge-ian/fokit
 ```
 
 Next, you'll need to run the install command:
 
 ```bash
-php artisan fortify:yourpreset
+php artisan fortify:fokit
 ```
 
-This command will publish **YourPreset's** views and resources to your project.
+This command will publish **Fokit's** views and resources to your project.
 
 - All `auth` views
-- Other files...
+- a `BladeComponentServiceProvider.php` file
+- a `webpack.mix.js` file, tuned for UIkit
+- a `package.json` file, for required NPM modules
+- a slightly opinionated `.editorconfig` file
+- a `.gitignore` file
+- a new route for `user/profile`
 
-<p align="center"><img  src="https://github.com/zacksmash/fortify-ui-preset/raw/master/fortify-preset-screenshot.png"></p>
+Next, you'll need to register the `BladeComponentServiceProvider` in your `config/app.php`
+
+```bash
+App\Providers\BladeComponentServiceProvider::class,
+```
+
+<p align="center"><img  src="https://github.com/bonge-ian/fokit/raw/master/fokit-ui-screenshot.png"></p>
+
+## Credits
+
+I give credit and thanks to [Zack Warren](https://github.com/zacksmash) for his awesome work in [*FortifyUI*](https://github.com/zacksmash/fortify-ui) and [*FortifyUIKit*](https://github.com/zacksmash/fortify-uikit) that has made it possible for the creation of this preset.
+
+You may also checkout [*FortifyUIKit*](https://github.com/zacksmash/fortify-uikit).
 
 ## License
 
-**FortifyUIPreset** is open-sourced software licensed under the [MIT license](LICENSE.md).
+**Fokit** is open-sourced software licensed under the [MIT license](LICENSE.md).
