@@ -1,11 +1,11 @@
 <?php
 
-namespace YourNamespace\FortifyUIPreset;
+namespace BongeIan\FokitUIPreset;
 
 use Illuminate\Support\ServiceProvider;
-use YourNamespace\FortifyUIPreset\Commands\FortifyUIPresetCommand;
+use BongeIan\FokitUIPreset\Commands\FokitUIPresetCommand;
 
-class FortifyUIPresetServiceProvider extends ServiceProvider
+class FokitUIPresetServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -16,7 +16,7 @@ class FortifyUIPresetServiceProvider extends ServiceProvider
             ], 'fortify-ui-preset-resources');
 
             $this->commands([
-                FortifyUIPresetCommand::class,
+                FokitUIPresetCommand::class,
             ]);
         }
     }

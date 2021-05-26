@@ -1,6 +1,6 @@
 <?php
 
-namespace YourNamespace\FortifyUIPreset\Tests;
+namespace BongeIan\FokitUIPreset\Tests;
 
 class ExampleTest extends TestCase
 {

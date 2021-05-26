@@ -1,16 +1,18 @@
 {
-    "name": "yournamespace/fortify-yourpreset",
-    "description": "Fortify-driven Laravel UI replacement",
+    "name": "bonge-ian/fokit",
+    "description": "Fortify-driven Laravel UI replacement with an opinionative modern feel",
     "keywords": [
-        "fortify-ui"
+        "fokit",
+        "fortify-ui",
+        "fortify-uikit"
     ],
-    "homepage": "https://github.com/yourusername/fortify-yourpreset",
+    "homepage": "https://github.com/bonge-ian/fokit",
     "license": "MIT",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "you@yourdomain.com",
-            "homepage": "https://yourusername.github.io",
+            "name": "Bonge Ian",
+            "email": "info@bonge-inc.co.ke",
+            "homepage": "https://bonge-inc.co.ke",
             "role": "Developer"
         }
     ],
@@ -26,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "YourNamespace\\FortifyUIPreset\\": "src"
+            "BongeIan\\FokitUIPreset\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "YourNamespace\\FortifyUIPreset\\Tests\\": "tests"
+            "BongeIan\\FokitUIPreset\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -46,7 +48,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "YourNamespace\\FortifyUIPreset\\FortifyUIPresetServiceProvider"
+                "BongeIan\\FokitUIPreset\\FokitUIPresetServiceProvider"
             ]
         }
     },
