@@ -37,8 +37,9 @@ This command will publish **Fokit's** views and resources to your project.
 - a slightly opinionated `.editorconfig` file
 - a `.gitignore` file
 - a new route for `user/profile`
+- register `App\Providers\BladeComponentServiceProvider` in your application (`config/app.php`)
 
-Next, you'll need to register the `BladeComponentServiceProvider` in your `config/app.php`
+You may require to register `BladeComponentServiceProvider` in your `config/app.php` if the Fokit command doesnt register it.
 
 ```bash
 App\Providers\BladeComponentServiceProvider::class,
