@@ -3,6 +3,7 @@
 namespace BongeIan\FokitUIPreset\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
 class FokitUIPresetCommand extends Command
@@ -15,6 +16,7 @@ class FokitUIPresetCommand extends Command
     {
         $this->publishAssets();
         $this->updateWebpackUrl();
+        $this->updateServiceProviders();
         $this->updateRoutes();
 
         $this->comment('Fokit UI is now installed.');
@@ -40,6 +42,34 @@ class FokitUIPresetCommand extends Command
                 File::get(base_path('webpack.mix.js'))
             )
         );
+    }
+
+    public function updateServiceProviders()
+    {
+        $appConfig = file_get_contents(config_path('app.php'));
+
+        if (
+            Str::contains($appConfig, 'App\\Providers\\FortifyServiceProvider::class')
+            && !Str::contains($appConfig, 'App\\Providers\\FortifyUIServiceProvider::class')
+        ) {
+            File::put(
+                config_path('app.php'),
+                str_replace(
+                    "App\Providers\FortifyServiceProvider::class,",
+                    "App\Providers\FortifyServiceProvider::class," . PHP_EOL . "        App\Providers\BladeComponentServiceProvider::class,",
+                    $appConfig
+                )
+            );
+        } else if (Str::contains($appConfig, 'App\\Providers\\FortifyUIServiceProvider::class')) {
+            File::put(
+                config_path('app.php'),
+                str_replace(
+                    "App\Providers\FortifyUIServiceProvider::class,",
+                    "App\Providers\FortifyUIServiceProvider::class," . PHP_EOL . "        App\Providers\BladeComponentServiceProvider::class,",
+                    $appConfig
+                )
+            );
+        }
     }
 
     protected function updateRoutes()
