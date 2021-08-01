@@ -1,13 +1,13 @@
 <x-auth-layout title="Register">
 	<x-slot name="cover_image">
-		{{ _('https://images.pexels.com/photos/3127880/pexels-photo-3127880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') }}
+		{{ __('https://images.pexels.com/photos/3127880/pexels-photo-3127880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') }}
 	</x-slot>
 	<x-slot name="cover_image_alt">
-		{{ _('Join Us Scrabbles Letters') }}
+		{{ __('Join Us Scrabbles Letters') }}
 	</x-slot>
 	<div class="uk-text-center">
 		<x-laravel-logo />
-		<h2 class="uk-text-muted">{{ _('New here? Create an account with us') }}</h2>
+		<h2 class="uk-text-muted">{{ __('New here? Create an account with us') }}</h2>
 	</div>
 
 	<form method="POST" action="{{ route('register') }}">
@@ -82,7 +82,7 @@
 
 	<div class="uk-margin-medium-top uk-margin-remove-bottom uk-text-center">
 		<div class="uk-text-meta">
-			<span>{{ _('Already familiar?')}}</span>
+			<span>{{ __('Already familiar?')}}</span>
 			<a href="{{ route('login') }}" class="uk-text-primary uk-link-text">
 				<small class="uk-text-small">{{ __('Sign in here.') }}</small>
 			</a>

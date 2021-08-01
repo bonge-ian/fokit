@@ -1,13 +1,13 @@
 <x-auth-layout title="Login">
 	<x-slot name="cover_image">
-		{{ _('https://images.unsplash.com/photo-1521159757827-5d98cfed32f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80') }}
+		{{ __('https://images.unsplash.com/photo-1521159757827-5d98cfed32f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80') }}
 	</x-slot>
 	<x-slot name="cover_image_alt">
-		{{ _('door with gray chain lock') }}
+		{{ __('door with gray chain lock') }}
 	</x-slot>
 	<div class="uk-text-center">
 		<x-laravel-logo />
-		<h2 class="uk-text-muted">{{ _('Sign in to your account') }}</h2>
+		<h2 class="uk-text-muted">{{ __('Sign in to your account') }}</h2>
 	</div>
 
 	<form method="POST" action="{{ route('login') }}">

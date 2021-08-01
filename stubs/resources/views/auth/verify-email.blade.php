@@ -1,9 +1,9 @@
 <x-auth-layout title="Verify Email">
 	<x-slot name="cover_image">
-		{{ _('https://images.pexels.com/photos/6963918/pexels-photo-6963918.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') }}
+		{{ __('https://images.pexels.com/photos/6963918/pexels-photo-6963918.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') }}
 	</x-slot>
 	<x-slot name="cover_image_alt">
-		{{ _('White man and Asian woman going over some documents') }}
+		{{ __('White man and Asian woman going over some documents') }}
 	</x-slot>
 	<div class="uk-text-center">
 		<x-laravel-logo />

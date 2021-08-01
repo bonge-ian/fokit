@@ -1,9 +1,9 @@
 <x-auth-layout title="Forgot Password">
 	<x-slot name="cover_image">
-		{{ _('https://images.pexels.com/photos/7534774/pexels-photo-7534774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') }}
+		{{ __('https://images.pexels.com/photos/7534774/pexels-photo-7534774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') }}
 	</x-slot>
 	<x-slot name="cover_image_alt">
-		{{ _('Man in Black Leather Jacket Covering His Face') }}
+		{{ __('Man in Black Leather Jacket Covering His Face') }}
 	</x-slot>
 	<div class="uk-text-center">
 		<x-laravel-logo />

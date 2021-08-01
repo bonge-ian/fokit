@@ -1,9 +1,9 @@
 <x-auth-layout title="Verification">
 	<x-slot name="cover_image">
-		{{ _('https://images.pexels.com/photos/6963067/pexels-photo-6963067.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') }}
+		{{ __('https://images.pexels.com/photos/6963067/pexels-photo-6963067.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') }}
 	</x-slot>
 	<x-slot name="cover_image_alt">
-		{{ _('Man and Woman Sitting at Table') }}
+		{{ __('Man and Woman Sitting at Table') }}
 	</x-slot>
 	<div class="uk-text-center">
 		<x-laravel-logo />

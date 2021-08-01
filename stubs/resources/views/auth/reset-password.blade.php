@@ -1,9 +1,9 @@
 <x-auth-layout title="Reset Password">
 	<x-slot name="cover_image">
-		{{ _('https://images.pexels.com/photos/7534784/pexels-photo-7534784.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500') }}
+		{{ __('https://images.pexels.com/photos/7534784/pexels-photo-7534784.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500') }}
 	</x-slot>
 	<x-slot name="cover_image_alt">
-		{{ _('Man in grey-collar shirt ') }}
+		{{ __('Man in grey-collar shirt ') }}
 	</x-slot>
 	<div class="uk-text-center">
 		<x-laravel-logo />
