@@ -24,15 +24,23 @@ composer require bonge-ian/fokit
 
 Next, you'll need to run the install command:
 
+If you use **Laravel Mix** then you will need to run this:
+
 ```bash
 php artisan fortify:fokit
+```
+
+If you use **Vite** powered by Laravel's vite plugin the you will need to run this:
+
+```bash
+php artisan fortify:fokit --vite
 ```
 
 This command will publish **Fokit's** views and resources to your project.
 
 - All `auth` views
 - a `BladeComponentServiceProvider.php` file
-- a `webpack.mix.js` file, tuned for UIkit
+- a `webpack.mix.js` or `vite.config.js` file, tuned for UIkit, depending on which option you chose above
 - a `package.json` file, for required NPM modules
 - a slightly opinionated `.editorconfig` file
 - a `.gitignore` file
@@ -44,6 +52,8 @@ You may require to register `BladeComponentServiceProvider` in your `config/app.
 ```bash
 App\Providers\BladeComponentServiceProvider::class,
 ```
+
+The `BladeComponentServiceProvider` allows us to use [blade layout components](https://laravel.com/docs/9.x/blade#layouts-using-components)
 
 <p align="center"><img  src="https://github.com/bonge-ian/fokit/raw/master/fokit-ui-screenshot.png"></p>
 
