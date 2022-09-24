@@ -44,7 +44,7 @@
                                 <div class="uk-visible@s uk-width-3-5@m  uk-width-1-2@s uk-grid-item-match">
                                     <div class="uk-cover-container">
                                         <canvas width="572" height="400"></canvas>
-                                        <img data-src="{{ $cover_image }}" alt="{{$cover_image_alt}}" uk-img uk-cover />
+                                        <img src="{{ $cover_image }}" alt="{{$cover_image_alt}}" loading="lazy" uk-cover />
                                     </div>
                                 </div>
                                 <div class="uk-width-2-5@m uk-width-1-2@s  uk-grid-item-match">
