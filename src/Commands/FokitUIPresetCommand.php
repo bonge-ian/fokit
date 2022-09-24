@@ -2,20 +2,24 @@
 
 namespace BongeIan\FokitUIPreset\Commands;
 
-use Illuminate\Console\Command;
 use Illuminate\Support\Str;
+use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
 class FokitUIPresetCommand extends Command
 {
-    public $signature = 'fortify:fokit';
+    public $signature = 'fortify:fokit {--vite}';
 
     public $description = 'Install Fokit UI with views and resources';
 
     public function handle()
     {
         $this->publishAssets();
-        $this->updateWebpackUrl();
+
+        if ($this->option('uikit')) {
+            $this->updateWebpackUrl();
+        }
+
         $this->updateServiceProviders();
         $this->updateRoutes();
 
@@ -28,6 +32,12 @@ class FokitUIPresetCommand extends Command
         $this->callSilent('vendor:publish', ['--tag' => 'layout-component-provider', '--force' => true]);
 
         $this->callSilent('vendor:publish', ['--tag' => 'fokit-ui-preset-resources', '--force' => true]);
+
+        if ($this->option('vite')) {
+            $this->callSilent('vendor:publish', ['--tag' => 'fokit-vite-resources', '--force' => true]);
+        } else {
+            $this->callSilent('vendor:publish', ['--tag' => 'fokit-webpack-resources', '--force' => true]);
+        }
 
         File::deleteDirectory(resource_path('css'));
     }
