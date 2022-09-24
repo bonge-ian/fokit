@@ -2,9 +2,9 @@
     "name": "bonge-ian/fokit",
     "description": "Fortify-driven Laravel UI replacement with an opinionative modern feel",
     "keywords": [
-        "fokit",
-        "fortify-ui",
-        "fortify-uikit"
+        "fokit", 
+        "fortify-uikit",
+        "fortify-uikit-with-vite"
     ],
     "homepage": "https://github.com/bonge-ian/fokit",
     "license": "MIT",
@@ -21,10 +21,10 @@
         "zacksmash/fortify-ui": "^1.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.6",
-        "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "^9.5",
-        "vimeo/psalm": "^4.20"
+        "friendsofphp/php-cs-fixer": "^3.11",
+        "orchestra/testbench": "^7.7",
+        "phpunit/phpunit": "^9.5.24",
+        "vimeo/psalm": "^4.27.0"
     },
     "autoload": {
         "psr-4": {
