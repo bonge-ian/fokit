@@ -1,8 +1,13 @@
+import _ from "lodash";
+window._ = _;
+import UIkit from "uikit";
+// this is the core uikit js package without the components activated.
+// import UIkit from "uikit/dist/js/uikit-core";
+
 /**
  * UIkit js components
  * Load the necessary components that you will require
  */
-
 // IMPORTS
 // import Countdown from "uikit/dist/js/components/countdown";
 // import Filter from 'uikit/dist/js/components/filter';
@@ -36,7 +41,7 @@ import UIkitIcons from "uikit/dist/js/uikit-icons";
 
 UIkit.use(UIkitIcons);
 
-
+window.UIkit = UIkit;
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
