@@ -16,7 +16,7 @@ class FokitUIPresetCommand extends Command
     {
         $this->publishAssets();
 
-        if ($this->option('uikit')) {
+        if (!$this->option('vite')) {
             $this->updateWebpackUrl();
         }
 
