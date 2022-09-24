@@ -11,6 +11,7 @@
 	},
 	"devDependencies": {
 		"browser-sync": "^2.27.7",
+		"lodash": "^4.17.19",
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"laravel-mix": "^6.0.42",
 		"postcss": "^8.4.6",
