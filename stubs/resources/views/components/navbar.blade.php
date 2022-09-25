@@ -1,6 +1,6 @@
 <header class='uk-background-default uk-box-shadow-small'>
-    <div class='uk-container'>
-        <nav class="uk-background-default uk-box-shadow-small"
+    <div class='uk-container uk-container-expand'>
+        <nav class="uk-navbar"
              uk-navbar>
             <div class="uk-navbar-left">
                 <a class="uk-navbar-item uk-logo"
