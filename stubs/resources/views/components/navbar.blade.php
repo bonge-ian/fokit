@@ -89,6 +89,7 @@
                 </ul>
             </div>
         </nav>
-        <x-mobile-nav />
+
     </div>
+    <x-mobile-nav />
 </header>
