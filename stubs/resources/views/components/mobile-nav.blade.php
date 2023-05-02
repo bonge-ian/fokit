@@ -1,38 +1,17 @@
-<header class='uk-background-default uk-box-shadow-small'>
-    <div class='uk-container uk-container-expand'>
-        <nav class="uk-navbar"
-             uk-navbar>
-            <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo"
-                   href="#">
-                    <img data-src="https://laravel.com/img/logomark.min.svg"
-                         alt="Laravel Logo"
-                         uk-svg
-                         uk-img
-                         width="40"
-                         height="40">
-                </a>
-
-                {{-- navigation links   --}}
-                <ul class="uk-navbar-nav">
-                    @auth
-                        <li class="{{ request()->routeIs('dashboard') ? 'uk-active' : '' }}">
-                            <a href="{{ route('dashboard') }}">Dashboard</a>
-                        </li>
-                    @endauth
-                </ul>
-            </div>
-
-            <div class="uk-navbar-right">
-                <a class="uk-hidden@m uk-navbar-toggle uk-icon uk-navbar-toggle-icon uk-navbar-toggle-animate"
-                   href="#mobile-menu"
-                   uk-navbar-toggle-icon
-                   uk-toggle="target: #mobile-menu"></a>
-                <ul class="uk-navbar-nav uk-visible@m">
-                    <li>
-                        <a href="#"><span uk-icon="grid"></span></a>
-                        <div class="uk-navbar-dropdown uk-width-medium">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
+	<div
+		id="mobile-menu"
+		class="uk-dropbar uk-dropbar-top uk-background-primary"
+		uk-drop="mode:click;animation: reveal-top;flip:false;animate-out:true;duration: 300;toggle:false;container: #main-nav;stretch: true"
+	>
+		<div class="uk-flex uk-flex-column">
+			<div class="uk-margin-auto-bottom">
+				<div class="uk-grid uk-child-width-1-1 uk-grid-stack" uk-grid>
+					<div>
+						<div class="uk-panel">
+							<ul class="uk-nav uk-nav-default uk-nav-divider">
+								<li>
+									<a href="/">Home</a>
+								</li>
                                 <!-- Authentication Links -->
                                 @guest
                                     <li class="{{ request()->routeIs('login') ? 'uk-active' : '' }}">
@@ -83,12 +62,10 @@
                                         </form>
                                     </li>
                                 @endguest
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <x-mobile-nav />
-    </div>
-</header>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>

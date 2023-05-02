@@ -2,7 +2,7 @@
     "name": "bonge-ian/fokit",
     "description": "Fortify-driven Laravel UI replacement with an opinionative modern feel",
     "keywords": [
-        "fokit", 
+        "fokit",
         "fortify-uikit",
         "fortify-uikit-with-vite"
     ],
@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "illuminate/contracts": "^8.0||^9.0",
+        "illuminate/contracts": "^8.0||^9.0||^10.0",
         "zacksmash/fortify-ui": "^1.0"
     },
     "require-dev": {
