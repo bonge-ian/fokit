@@ -1,8 +1,7 @@
 <div id="mobile-menu"
      class="uk-dropbar uk-dropbar-top uk-box-shadow-medium"
      uk-drop="mode:click;animation:reveal-top;offset:0;flip:false;animate-out:true;duration: 300;toggle:.uk-navbar-toggle-icon;stretch: true">
-    <div class="uk-flex uk-flex-column"
-         style="min-height: 100%;">
+    <div class="uk-flex uk-flex-column">
         <div class="uk-margin-auto-bottom">
             <div class="uk-grid uk-child-width-1-1 uk-grid-stack"
                  uk-grid>

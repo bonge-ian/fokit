@@ -1,10 +1,10 @@
 <header class='uk-background-default uk-box-shadow-small'>
     <div class='uk-container uk-container-expand'>
         <nav class="uk-navbar"
-             uk-navbar>
+             uk-navbar="mode: click;animation: reveal-top;animate-out: true;">
             <div class="uk-navbar-left">
                 <a class="uk-navbar-item uk-logo"
-                   href="#">
+                   href="/">
                     <img data-src="https://laravel.com/img/logomark.min.svg"
                          alt="Laravel Logo"
                          uk-svg
@@ -29,30 +29,31 @@
                    uk-navbar-toggle-icon
                    uk-toggle="target: #mobile-menu"></a>
                 <ul class="uk-navbar-nav uk-visible@m">
-                    <li>
-                        <a href="#"><span uk-icon="grid"></span></a>
-                        <div class="uk-navbar-dropdown uk-width-medium">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <!-- Authentication Links -->
-                                @guest
-                                    <li class="{{ request()->routeIs('login') ? 'uk-active' : '' }}">
-                                        <a href="{{ route('login') }}">
-                                            <span uk-icon="sign-in"
-                                                  class="uk-margin-small-right"></span>
-                                            {{ __('Login') }}
-                                        </a>
-                                    </li>
-
-                                    @if (Route::has('register'))
-                                        <li class="{{ request()->routeIs('register') ? 'uk-active' : '' }}">
-                                            <a href="{{ route('register') }}">
-                                                <span uk-icon="user"
-                                                      class="uk-margin-small-right"></span>
-                                                {{ __('Register') }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                @else
+                    @guest
+                        <!-- Authentication Links -->
+                        <li class="{{ request()->routeIs('login') ? 'uk-active' : '' }}">
+                            <a href="{{ route('login') }}">
+                                <span uk-icon="icon: sign-in"
+                                      class="uk-margin-small-right"></span>
+                                {{ __('Login') }}
+                            </a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="{{ request()->routeIs('register') ? 'uk-active' : '' }}">
+                                <a href="{{ route('register') }}">
+                                    <span uk-icon="icon: user-plus"
+                                          class="uk-margin-small-right"></span>
+                                    {{ __('Register') }}
+                                </a>
+                            </li>
+                        @endif
+                    @else
+                        <li>
+                            <a href="#"><span uk-icon="icon: user-circle"></span><span
+                                      uk-navbar-parent-icon></span></a>
+                            <div class="uk-navbar-dropdown uk-width-medium">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <!-- Authentication Links -->
                                     <li class="uk-nav-header">
                                         Hi, {{ Auth::user()->name }}
                                     </li>
@@ -82,10 +83,12 @@
                                             @csrf
                                         </form>
                                     </li>
-                                @endguest
-                            </ul>
-                        </div>
-                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    @endguest
+
                 </ul>
             </div>
         </nav>

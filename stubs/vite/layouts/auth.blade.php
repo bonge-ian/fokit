@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Styles and scripts -->
-		@vite(['resources/scss/app.scss', 'resources/js/app.js'])
+	@vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>

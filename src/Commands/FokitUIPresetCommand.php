@@ -58,6 +58,11 @@ class FokitUIPresetCommand extends Command
     {
         $appConfig = file_get_contents(config_path('app.php'));
 
+        if (Str::contains($appConfig, 'App\\Providers\\BladeComponentServiceProvider::class')) {
+            $this->info('BladeComponentServiceProvider class has already been published');
+            return;
+        }
+
         if (
             Str::contains($appConfig, 'App\\Providers\\FortifyServiceProvider::class')
             && !Str::contains($appConfig, 'App\\Providers\\FortifyUIServiceProvider::class')

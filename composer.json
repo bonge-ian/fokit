@@ -21,10 +21,10 @@
         "zacksmash/fortify-ui": "^1.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.11",
-        "orchestra/testbench": "^7.7",
-        "phpunit/phpunit": "^9.5.24",
-        "vimeo/psalm": "^4.27.0"
+        "friendsofphp/php-cs-fixer": "^3.16",
+        "orchestra/testbench": "^8.5",
+        "phpunit/phpunit": "^10.1",
+        "vimeo/psalm": "^5.11"
     },
     "autoload": {
         "psr-4": {
